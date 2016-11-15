@@ -48,4 +48,4 @@ Your mum wakes you up in your room regular day.
 
 >The Augmented Guide to Effective Student Life (TAGESL)
 
->A Crumped Note You Should Totally Read
+>A Crumped Note You Should Totally Read (ACNYSTR)
