@@ -1,7 +1,29 @@
-import org.simpleframework.xml.*;
+import org.simpleframework.xml.Serializer;
+import org.simpleframework.xml.core.Persister;
 
-/**
- * Created by Joel on 14/11/2016.
- */
+import java.io.*;
+
+
 class SimpleFacade {
+    private static Serializer serializer = new Persister();
+
+    public static Scene read(Class<Scene> rootClass, String filename) {
+        Scene root = null;
+
+        try (Reader reader = new BufferedReader(new FileReader(filename))) {
+            root = serializer.read(rootClass, reader);
+        } catch (Exception e) {
+            // Empty catch statement
+        }
+
+        return root;
+    }
+
+    public static void write(Scene root, String filename) {
+        try (Writer writer = new BufferedWriter(new FileWriter(filename))) {
+            serializer.write(root, writer);
+        } catch (Exception e) {
+            // Enpty catch statement
+        }
+    }
 }
