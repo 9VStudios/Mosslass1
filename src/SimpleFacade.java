@@ -7,11 +7,11 @@ import java.io.*;
 class SimpleFacade {
     private static Serializer serializer = new Persister();
 
-    public static Scene read(Class<Scene> rootClass, String filename) {
+    public static Scene read(String filename) {
         Scene root = null;
 
         try (Reader reader = new BufferedReader(new FileReader(filename))) {
-            root = serializer.read(rootClass, reader);
+            root = serializer.read(Scene.class, reader);
         } catch (Exception e) {
             // Empty catch statement
         }
