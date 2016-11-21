@@ -3,5 +3,5 @@
  */
 public interface Command {
 
-    void doCommand();
+    void doCommand(SceneController sceneController);
 }
