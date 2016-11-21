@@ -1,78 +1,47 @@
-//Put in feature branch "Feature npc - Nobody using"
+import java.util.List;
 
-public class NPC extends NPCSettings {
-	
+public abstract class Npc {
+
 	private boolean talkedWith = false;
 
 	private int conversationNumber = 1;
+	/* This will be incremented after an event to 
+	 make the npc say something else */
 
-	private String name;
-	private String description;
+	private List<Event> events;
 
-	private String[] conversation; 
+	public abstract void presentItem(Item givenItem); //Case statement for given item
 
-	/*Will be given a determined size per NPCafter we know
-	  how many lines each NPC will say.
+	public abstract void talk(); //If statement
 
-	  Note: conversation[0] is a special variable when 
-	  the NPC has nothing important to say. */
+	public abstract boolean haveSpokenTo(); //Checks boolena variable
 
+	public abstract void incrementConversationNumber();
 
-	public NPC(String name) {
-		setName(name);
-		NPCSetUp();
+	public abstract void setConversationNumber(int conversationSetter);
+
+	public abstract void setSpokenToFalse();
+
+	public abstract void setSpokenToTrue();
+
+	public abstract void setDescription(String str);
+
+	public abstract String getDescription();
+
+	public abstract String getName();
+
+	public abstract void setName(String str);
+
+	public List<Event> getEvents() {
+		return events;
 	}
-
-	public void NPCSetUp() {
-		//TO-DO Set variables accordingly (via xml?)
-	}
-
-
-	public void talk() {
-		System.out.println(conversation[conversationNumber]);
-	}
-
-	public void setSpokenToFalse() {
-		talkedWith = false;
-	}
-
-	public void setSpokenToTrue() {
-		talkedWith = true;
-	}
-
-	public boolean haveSpokenTo() {
-		return talkedWith;
-	}
-
-	public void setDescription(String str) {
-		description = str;
-	}
-
-	public String getDescription() {
-		return description;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String str) {
-		name = str;
-	}
-
-	public void incrementConversationNumber() {
-		conversationNumber++;
-	}
-
-	public void setConversationNumber(int conversationSetter) {
-		conversationNumber = conversationSetter;
-	}
-
-	@Override
-	public void presentItem(Item givenItem) {
-		// TODO Auto-generated method stub
-	}
-
-	
-
 }
+/*
+
+master is latest version
+- Add local movie time
+- add preference to do something etc...
+
+This'll be related to 
+
+*/

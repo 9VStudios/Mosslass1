@@ -5,7 +5,7 @@ class Scene {
     private String description;
     private List<Event> events;
     private List<Item> items;
-    private List<NPC> npcs;
+    private List<Npc> npcs;
 
     public int getId() {
         return id;
@@ -23,7 +23,7 @@ class Scene {
         return items;
     }
 
-    public List<NPC> getNpcs() {
+    public List<Npc> getNpcs() {
         return npcs;
     }
 }
