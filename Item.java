@@ -8,10 +8,7 @@ public class Item{
 	private String itemDescription;
 
 	private int itemID;
-
-	/*Will vary on how the matching text will be parsed in 
-	          [Alter hash code after decision]*/
-	//private Item[] compatibleItems;
+	
 	private Map<Item, String> compatibleItems = new HashMap<>();
 
 	
@@ -31,8 +28,8 @@ public class Item{
 		itemDescription = str;
 	} 
 
-	public void inspect() {
-		System.out.println(itemDescription);
+	public String inspect() {
+		return itemDescription;
 	}
 
 	/* Uncomment when world is completed

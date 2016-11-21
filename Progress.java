@@ -1,26 +1,26 @@
 
 public class Progress {
 
+	
+	//Could make these static and then just create a new progress instance where we do the saving rather than passing?
 	private Inventory inventory;
 	private Scene scene;
 	
 	
-	public Inventory getInventory() {
-		return inventory;
+	public Progress(Player player, Scene scene) {
+		inventory = player.getInventory();
+		this.scene = scene;
 	}
 	
-	public void setInventory(Inventory inventory) {
-		this.inventory = inventory;
+	public Inventory getInventory() {
+		return inventory;
 	}
 	
 	public Scene getScene() {
 		return scene;
 	}
 	
-	public void setScene(Scene scene) {
-		this.scene = scene;
-	}
-	
+
 	
 	
 }
