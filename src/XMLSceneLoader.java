@@ -7,8 +7,8 @@ class XMLSceneLoader {
         return ourInstance;
     }
 
-    public Scene get(int sceneId) {
+    public <T> T get(Class<T> rootClass, int sceneId) {
         String path = String.format(SCENE_FORMAT, sceneId);
-        return SimpleFacade.read(path);
+        return SimpleFacade.read(rootClass, path);
     }
 }
