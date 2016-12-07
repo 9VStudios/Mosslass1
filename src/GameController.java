@@ -17,7 +17,7 @@ public class GameController {
     }
 
     public void onEvent(Command command){
-        command.doCommand();
+        command.doCommand(SceneController.getInstance());
         SceneController.getInstance().onCommand();
     }
 }
